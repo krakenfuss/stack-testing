@@ -3,13 +3,15 @@ import './App.css'
 
 const FILTERS = ['All', 'Active', 'Completed']
 
-let nextId = 1
+function newId() {
+  return crypto.randomUUID()
+}
 
 function App() {
   const [todos, setTodos] = useState([
-    { id: nextId++, text: 'Buy groceries', completed: false },
-    { id: nextId++, text: 'Walk the dog', completed: true },
-    { id: nextId++, text: 'Read a book', completed: false },
+    { id: newId(), text: 'Buy groceries', completed: false },
+    { id: newId(), text: 'Walk the dog', completed: true },
+    { id: newId(), text: 'Read a book', completed: false },
   ])
   const [input, setInput] = useState('')
   const [filter, setFilter] = useState('All')
@@ -18,7 +20,7 @@ function App() {
     e.preventDefault()
     const text = input.trim()
     if (!text) return
-    setTodos([...todos, { id: nextId++, text, completed: false }])
+    setTodos([...todos, { id: newId(), text, completed: false }])
     setInput('')
   }
 
