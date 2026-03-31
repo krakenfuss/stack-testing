@@ -1,0 +1,204 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 16px 40px;
+}
+
+.title {
+  font-size: 80px;
+  font-weight: 100;
+  color: rgba(175, 47, 47, 0.3);
+  letter-spacing: -4px;
+  margin-bottom: 32px;
+}
+
+.card {
+  background: #fff;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 25px 50px rgba(0,0,0,0.1);
+}
+
+/* Add form */
+.add-form {
+  display: flex;
+  border-bottom: 1px solid #ededed;
+}
+
+.add-input {
+  flex: 1;
+  padding: 16px 16px 16px 60px;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: 300;
+  color: #4d4d4d;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.add-input::placeholder {
+  color: #e6e6e6;
+  font-style: italic;
+}
+
+.add-btn {
+  padding: 0 20px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #af2f2f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background: #8a2020;
+}
+
+/* Todo list */
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid #ededed;
+  gap: 12px;
+  min-height: 58px;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-checkbox {
+  width: 28px;
+  height: 28px;
+  accent-color: #5dc2af;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 24px;
+  font-weight: 300;
+  color: #4d4d4d;
+  word-break: break-word;
+  transition: color 0.2s;
+}
+
+.todo-item.completed .todo-text {
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #cc9a9a;
+  font-size: 22px;
+  line-height: 1;
+  padding: 4px 6px;
+  opacity: 0;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.todo-item:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  color: #af5b5e;
+}
+
+.empty-message {
+  padding: 20px;
+  text-align: center;
+  color: #d9d9d9;
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  color: #777;
+  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.count {
+  min-width: 90px;
+}
+
+.filters {
+  display: flex;
+  gap: 4px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 3px 8px;
+  transition: border-color 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: rgba(175, 47, 47, 0.3);
+}
+
+.filter-btn.active {
+  border-color: rgba(175, 47, 47, 0.5);
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 3px 8px;
+  transition: color 0.2s, text-decoration 0.2s;
+  text-align: right;
+}
+
+.clear-btn:hover:not(:disabled) {
+  text-decoration: underline;
+  color: #af2f2f;
+}
+
+.clear-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
